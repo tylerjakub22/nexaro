@@ -265,6 +265,7 @@ def lasmo():
     if request.method == 'GET':
         dman = session.get('ins')
     return render_template('main.html', dman=dman)
+import os
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
